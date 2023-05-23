@@ -15,7 +15,7 @@ public class ButtomLoginSectionWITHACC implements Task {
     @Step("Click in LoginSection with ACC")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(RegisterPage.BTN_LOGINSECTION_WITHACCOUNT, isVisible()).forNoMoreThan(100).milliseconds(),
+                WaitUntil.the(RegisterPage.BTN_LOGINSECTION_WITHACCOUNT, isVisible()).forNoMoreThan(15).seconds(),
                 Click.on(RegisterPage.BTN_LOGINSECTION_WITHACCOUNT)
         );
     }

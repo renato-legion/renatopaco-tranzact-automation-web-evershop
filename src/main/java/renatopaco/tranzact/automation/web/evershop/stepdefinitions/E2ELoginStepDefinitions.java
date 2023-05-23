@@ -106,15 +106,18 @@ public class E2ELoginStepDefinitions {
     @And("performs the logut and login activity with the new user")
     public void realizaLoginyLogout() throws InterruptedException {
 
+        Thread.sleep(1500);
         System.out.println("Created User: "+ UserNameGlobal +"\nGLOBAL EMAIL: "+EmailGlobal +"\nPASSWORD GLOBAL: "+PasswordGlobal);
         // Clic LoginSection with ACC
         theActorInTheSpotlight().attemptsTo(
                 new ButtomLoginSectionWITHACC()
         );
+        Thread.sleep(500);
         //Logout Session
         theActorInTheSpotlight().attemptsTo(
                 new LogOutEvershop()
         );
+        Thread.sleep(500);
         // Clic LoginSection without acc active
         theActorInTheSpotlight().attemptsTo(
                 new ButtomLoginSectionWITHOUTACC()
