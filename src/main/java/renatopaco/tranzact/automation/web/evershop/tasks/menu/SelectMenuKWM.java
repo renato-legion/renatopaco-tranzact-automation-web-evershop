@@ -25,21 +25,24 @@ public class SelectMenuKWM implements Task{
             case "Kids":
                 actor.attemptsTo(
                         WaitUntil.the(MenuAccountPage.TXTBTN_KIDS_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds(),
-                        Click.on(MenuAccountPage.TXTBTN_KIDS_MENU_MENUACCOUNT)
+                        Click.on(MenuAccountPage.TXTBTN_KIDS_MENU_MENUACCOUNT),
+                        WaitUntil.the(MenuAccountPage.LABEL_KIDS_WOMAN_MEN_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds()
                 );
 
                 break;
             case "Women":
                 actor.attemptsTo(
                         WaitUntil.the(MenuAccountPage.TXTBTN_WOMEN_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds(),
-                        Click.on(MenuAccountPage.TXTBTN_WOMEN_MENU_MENUACCOUNT)
+                        Click.on(MenuAccountPage.TXTBTN_WOMEN_MENU_MENUACCOUNT),
+                        WaitUntil.the(MenuAccountPage.LABEL_KIDS_WOMAN_MEN_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds()
                 );
 
                 break;
             case "Men":
                 actor.attemptsTo(
                         WaitUntil.the(MenuAccountPage.TXTBTN_MEN_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds(),
-                        Click.on(MenuAccountPage.TXTBTN_MEN_MENU_MENUACCOUNT)
+                        Click.on(MenuAccountPage.TXTBTN_MEN_MENU_MENUACCOUNT),
+                        WaitUntil.the(MenuAccountPage.LABEL_KIDS_WOMAN_MEN_MENU_MENUACCOUNT, isVisible()).forNoMoreThan(15).seconds()
                 );
 
                 break;

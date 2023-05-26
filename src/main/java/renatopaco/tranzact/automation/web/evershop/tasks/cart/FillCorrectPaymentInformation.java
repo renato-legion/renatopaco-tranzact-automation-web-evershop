@@ -13,7 +13,7 @@ import net.thucydides.core.annotations.Step;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.Keys;
 import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.CartPage;
-import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.InsertCardInformation;
+
 
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

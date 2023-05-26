@@ -59,6 +59,12 @@ public class SelectColorProducts implements Task {
                         Click.on(ProductsPage.BTN_COLOR_BLUE_DETAILPRODUCT)
                 );
                 break;
+            case "Grey":
+                actor.attemptsTo(
+                        WaitUntil.the(ProductsPage.BTN_COLOR_GREY_DETAILPRODUCT, isVisible()).forNoMoreThan(15).seconds(),
+                        Click.on(ProductsPage.BTN_COLOR_GREY_DETAILPRODUCT)
+                );
+                break;
             case "Red":
                 actor.attemptsTo(
                         WaitUntil.the(ProductsPage.BTN_COLOR_RED_DETAILPRODUCT, isVisible()).forNoMoreThan(15).seconds(),

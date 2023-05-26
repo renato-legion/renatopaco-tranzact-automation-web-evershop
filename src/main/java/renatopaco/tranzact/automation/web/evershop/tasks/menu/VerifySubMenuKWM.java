@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 import renatopaco.tranzact.automation.web.evershop.questions.TitleSubMenuQuestions;
 import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.MenuAccountPage;
+import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.ProductsPage;
 
 import java.util.Locale;
 

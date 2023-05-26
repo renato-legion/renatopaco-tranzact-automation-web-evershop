@@ -10,6 +10,7 @@ import renatopaco.tranzact.automation.web.evershop.questions.DetailPaymentQuesti
 import renatopaco.tranzact.automation.web.evershop.tasks.registerAccount.RegisterAccounts;
 import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.DetailPaymentSuccessfullPage;
 import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.RegisterPage;
+import renatopaco.tranzact.automation.web.evershop.userinterface.registerAccount.ValidateProductsOrder;
 import renatopaco.tranzact.automation.web.evershop.utils.PriceTotalCalculatedStrings;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -19,6 +20,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class VerifyOrderCart implements Task {
 
+    ValidateProductsOrder validateProductsOrder = new ValidateProductsOrder();
     private final String EmailGlobal;
 
     private final String QuantityProduct1;
@@ -71,6 +73,9 @@ public class VerifyOrderCart implements Task {
 
         SubTotal=pricefunciton.ConvertToMoneyStyle(SubTotal);
         TotalCart=pricefunciton.ConvertToMoneyStyle(TotalCart);
+
+
+
         theActorInTheSpotlight().should(
                 seeThat(DetailPaymentQuestions.QLBL_EMAIL_DETAIL_PAYMENT(), equalTo(EmailGlobal)),
                 seeThat(DetailPaymentQuestions.QLBL_PAYMENTMETHOD_DETAIL_PAYMENT(), equalTo("Cash On Delivery")),
@@ -94,33 +99,7 @@ public class VerifyOrderCart implements Task {
 
         );
 
-
-//        System.out.println("Product 1 variables globales: "+ QuantityProduct1 +" "+NameProduct1+" "+Size1+" "+Color1+" \n");
-//        theActorInTheSpotlight().should(
-//                seeThat(DetailPaymentQuestions.QLBL1_QUANTITY(), equalTo(QuantityProduct1)),
-//                seeThat(DetailPaymentQuestions.QLBL1_NAME(), equalTo(NameProduct1)),
-//                seeThat(DetailPaymentQuestions.QLBL1_SIZE(), equalTo(Size1)),
-//                seeThat(DetailPaymentQuestions.QLBL1_COLOR(), equalTo(Color1)),
-//                seeThat(DetailPaymentQuestions.QLBL1_TOTALPRICE(), equalTo("$"+TotalPrice1+".00"))
-//        );
-//
-//        System.out.println("Product 2 variables globales: "+ QuantityProduct2 +" "+NameProduct2+" "+Size2+" "+Color2+" \n");
-//        theActorInTheSpotlight().should(
-//                seeThat(DetailPaymentQuestions.QLBL2_QUANTITY(), equalTo(QuantityProduct2)),
-//                seeThat(DetailPaymentQuestions.QLBL2_NAME(), equalTo(NameProduct2)),
-//                seeThat(DetailPaymentQuestions.QLBL2_SIZE(), equalTo(Size2)),
-//                seeThat(DetailPaymentQuestions.QLBL2_COLOR(), equalTo(Color2)),
-//                seeThat(DetailPaymentQuestions.QLBL2_TOTALPRICE(), equalTo("$"+TotalPrice2+".00"))
-//        );
-//        System.out.println("Product 3 variables globales: "+ QuantityProduct3 +" "+NameProduct3+" "+Size3+" "+Color3+" \n");
-//        theActorInTheSpotlight().should(
-//                seeThat(DetailPaymentQuestions.QLBL3_QUANTITY(), equalTo(QuantityProduct3)),
-//                seeThat(DetailPaymentQuestions.QLBL3_NAME(), equalTo(NameProduct3)),
-//                seeThat(DetailPaymentQuestions.QLBL3_SIZE(), equalTo(Size3)),
-//                seeThat(DetailPaymentQuestions.QLBL3_COLOR(), equalTo(Color3)),
-//                seeThat(DetailPaymentQuestions.QLBL3_TOTALPRICE(), equalTo("$"+TotalPrice3+".00"))
-//        );
-
+        validateProductsOrder.validateProducts(QuantityProduct1,NameProduct1,TotalPrice1,Size1,Color1,QuantityProduct2,NameProduct2,TotalPrice2,Size2,Color2,QuantityProduct3,NameProduct3,TotalPrice3,Size3,Color3);
         System.out.println("Product variables globales: "+ SubTotal +" "+TotalCart);
         theActorInTheSpotlight().should(
                 seeThat(DetailPaymentQuestions.QLBL_SUBTOTAL(), equalTo(SubTotal)),
